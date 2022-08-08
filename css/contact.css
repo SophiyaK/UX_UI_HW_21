@@ -1,0 +1,296 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    /*    */
+    transition: 800ms;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* ROOT */
+  :root {
+    --page-margin: 8rem;
+    --clr-primary: #424242;
+    --clr-dark: #1b1b1b;
+    --clr-light: #1f1f1f;
+    --clr-accent: #00ffff; /* using color variables like this means you can just replace them with your preferred style colors */
+    --ln: 1px solid var(--clr-primary);
+  }
+  
+  a {
+    color: var(--clr-primary);
+    text-decoration: none;
+  }
+  
+  h2 a {
+    color: white;
+  }
+  
+  /* NAV */
+  nav {
+    height: 96px;
+    padding: 0 var(--page-margin);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: var(--ln);
+  }
+  
+  nav > * {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .brand {
+    padding-right: var(--page-margin);
+    border-right: var(--ln);
+  }
+  
+  nav .links > * {
+    height: 100%;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    border-left: var(--ln);
+  }
+  
+  nav .links > *:last-child {
+    border-right: var(--ln);
+  }
+  
+  nav .links > *:hover {
+    background-color: var(--clr-dark);
+    color: white;
+  }
+  
+  #burger {
+    display: none;
+  }
+  
+  #burger p {
+    transform: rotate(90deg);
+  }
+  
+  @media only screen and (max-width: 960px) {
+    nav .links a {
+      display: none;
+    }
+  
+    nav .links #burger {
+      border-right: var(--ln);
+      display: inherit;
+    }
+  }
+  
+  /* MODAL */
+  #modal-menu {
+    opacity: 1;
+    position: fixed;
+    top: 96px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--clr-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  #modal-menu.hidden {
+    opacity: 0;
+    top: 200vh;
+  }
+  
+  #modal-menu h2 {
+    padding: 2rem 6rem;
+    border-radius: 24rem;
+    border: 1px solid var(--clr-light);
+    transition: 400ms;
+  }
+  
+  #modal-menu h2:hover {
+    border: 1px solid var(--clr-primary);
+    transform: scale(1.2);
+    box-shadow: 0 0 56px rgba(255, 255, 255, 0.06);
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+  }
+  
+  
+  :root {
+    --ln: 1px solid #424242;
+    --gr-4: span 4;
+    --gr-8: span 8;
+    --nav-height: 72px;
+  }
+  
+  @media screen and (max-width: 960px) {
+    :root {
+      --gr-4: span 12;
+      --gr-8: span 12;
+    }
+  
+  
+  }
+  
+  /* FORM */
+
+form {
+    padding-top: 30px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    min-width: 560px;
+    width: 40vw;
+    border: var(--ln);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  form input {
+    margin-bottom: 1.5rem;
+    width: 100%;
+    height: 48px;
+    padding: 0 1rem;
+  }
+  
+  form .action {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  form input:focus {
+    background-color: black;
+    color: white;
+  }
+  
+  .spacer {
+    height: 500vh;
+  }
+
+
+  /* Generic styling */
+  * {
+    box-sizing: border-box;
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  footer {
+    background-color: #555;
+    color: #bbb;
+    line-height: 1.5;
+  }
+  footer a {
+    text-decoration: none;
+    color: #eee;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .ft-title {
+    color: #fff;
+    font-family: monospace;
+    font-size: 1.375rem;
+    padding-bottom: 0.625rem;
+  }
+  /* Sticks footer to bottom */
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  .container {
+    flex: 1;
+  }
+  /* Footer main */
+  .ft-main {
+    padding: 1.25rem 1.875rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media only screen and (min-width: 29.8125rem /* 477px */) {
+    .ft-main {
+      justify-content: space-evenly;
+    }
+  }
+  @media only screen and (min-width: 77.5rem /* 1240px */) {
+    .ft-main {
+      justify-content: space-evenly;
+    }
+  }
+  .ft-main-item {
+    padding: 1.25rem;
+    min-width: 12.5rem;
+  }
+  
+  /* Footer main | Newsletter form */
+  form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  input[type="email"] {
+    border: 0;
+    padding: 0.625rem;
+    margin-top: 0.3125rem;
+  }
+  input[type="submit"] {
+    background-color: #00d188;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    padding: 0.625rem 0.9375rem;
+    margin-top: 0.3125rem;
+  }
+  /* Footer social */
+  .ft-social {
+    padding: 0 1.875rem 1.25rem;
+  }
+  .ft-social-list {
+    display: flex;
+    justify-content: center;
+    border-top: 1px #777 solid;
+    padding-top: 1.25rem;
+  }
+  .ft-social-list li {
+    margin: 0.5rem;
+    font-size: 1.25rem;
+  }
+  /* Footer legal */
+  .ft-legal {
+    padding: 0.9375rem 1.875rem;
+    background-color: #333;
+  }
+  .ft-legal-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ft-legal-list li {
+    margin: 0.125rem 0.625rem;
+    white-space: nowrap;
+  }
+  /* one before the last child */
+  .ft-legal-list li:nth-last-child(2) {
+    flex: 1;
+  }
+  
